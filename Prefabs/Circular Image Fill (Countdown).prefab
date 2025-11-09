@@ -487,6 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21409c21636d5426c85e134252ffc7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: trickedoutui::JacobHomanics.UI.TextDisplayFeatureComponent
-  text: {fileID: 6599389976425557801}
-  displayType: 2
-  format: '#,##0'
+  properties:
+    text: {fileID: 6599389976425557801}
+    displayType: 0
+    format: '#,##0'
