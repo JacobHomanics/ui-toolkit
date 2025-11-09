@@ -1,6 +1,6 @@
 {
   "name": "com.jacobhomanics.trickedoutui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "Tricked Out UI",
   "description": "A toolkit for working with the Unity UI",
   "unity": "6000.0",
