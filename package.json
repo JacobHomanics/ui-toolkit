@@ -1,7 +1,7 @@
 {
-  "name": "com.jacobhomanics.uitoolkit",
-  "version": "0.0.3",
-  "displayName": "UI Toolkit",
+  "name": "com.jacobhomanics.trickedoutui",
+  "version": "0.0.5",
+  "displayName": "Tricked Out UI",
   "description": "A toolkit for working with the Unity UI",
   "unity": "6000.0",
   "unityRelease": "31f1",
