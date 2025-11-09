@@ -17,7 +17,7 @@ jobs:
       id: get-package-name
       run: echo ::set-output name=package-name::$(jq -r .name ${{ steps.find-package-json.outputs.package-json-path }})
     - name: Git Subtree Split
-      run: git subtree split -P ./${{ steps.get-package-name.outputs.package-name }}/ -b upm
+      run: git subtree split -P Packages/${{ steps.get-package-name.outputs.package-name }}/ -b upm
     - name: Get Version from package.json
       id: get-version
       run: echo ::set-output name=version::$(jq -r .version ${{ steps.find-package-json.outputs.package-json-path }})
