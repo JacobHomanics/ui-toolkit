@@ -3,58 +3,61 @@ using UnityEngine;
 using UnityEngine.UI;
 using JacobHomanics.UI;
 
-namespace JacobHomanics.UI {
+namespace JacobHomanics.UI
+{
 
     public class TrickedOutImage : MonoBehaviour
     {
-        [SerializeField] private Image image;
+        // [SerializeField] private Image image;
 
-        public Image Image
-        {
-            get => image;
-        }
+        // public Image Image
+        // {
+        //     get => image;
+        // }
 
-        [SerializeReference]
-        private List<FeatureToggle> featureToggles = new List<FeatureToggle>
-        {
-            new TextDisplayFeature2(),
-            new ColorGradientFeature(),
-            new BackgroundFillFeature(),
-            new FlashingFeature()
-        };
+        // [SerializeField] private BackgroundFillFeatureComponent backgroundFillFeature;
+        // [SerializeField] private ColorGradientFeatureComponent colorGradientFeature;
+        // [SerializeField] private FlashingFeatureComponent flashingFeature;
+        // [SerializeField] private TextDisplayFeatureComponent textDisplayFeature;
 
-        public Connector connector;
+        // [SerializeReference]
+        // private List<FeatureToggle> featureToggles = new List<FeatureToggle>
+        // {
+        //     new TextDisplayFeature2(),
+        //     new ColorGradientFeature(),
+        //     new BackgroundFillFeature(),
+        //     new FlashingFeature()
+        // };
+
+        public BaseCurrentMaxConnector connector;
 
         public float CurrentNum => connector.CurrentNum;
         public float MaxNum => connector.MaxNum;
 
-        public bool reverseFill;
+        // public bool reverseFill;
 
-        private float previousValue;
+        // private float previousValue;
 
-        private void Awake()
-        {
-            previousValue = CurrentNum;
-        }
+        // private void Awake()
+        // {
+        //     previousValue = CurrentNum;
+        // }
 
         void Update()
         {
-            Debug.Log(reverseFill);
-            if (reverseFill)
-                image.fillAmount = (MaxNum - CurrentNum) / MaxNum;
-            else
-                image.fillAmount = CurrentNum / MaxNum;
+            // if (reverseFill)
+            //     image.fillAmount = (MaxNum - CurrentNum) / MaxNum;
+            // else
+            //     image.fillAmount = CurrentNum / MaxNum;
 
+            // UIToolkit.Display(UIToolkit.GetFeature<TextDisplayFeature2>(featureToggles), CurrentNum, MaxNum);
 
+            // UIToolkit.ColorGradientFeatureCommand(UIToolkit.GetFeature<ColorGradientFeature>(featureToggles), image, CurrentNum, MaxNum);
 
-            UIToolkit.Display(UIToolkit.GetFeature<TextDisplayFeature2>(featureToggles), CurrentNum, MaxNum);
+            // UIToolkit.FlashingFeatureCommand(UIToolkit.GetFeature<FlashingFeature>(featureToggles), CurrentNum, MaxNum);
 
-            UIToolkit.ColorGradientFeatureCommand(UIToolkit.GetFeature<ColorGradientFeature>(featureToggles), image, CurrentNum, MaxNum);
-
-            UIToolkit.FlashingFeatureCommand(UIToolkit.GetFeature<FlashingFeature>(featureToggles), CurrentNum, MaxNum);
-
-            UIToolkit.HandleValueChange(CurrentNum, UIToolkit.GetFeature<BackgroundFillFeature>(featureToggles), ref previousValue, MaxNum);
-            UIToolkit.UpdateBackgroundFillAnimation(UIToolkit.GetFeature<BackgroundFillFeature>(featureToggles), MaxNum);
+            // UIToolkit.HandleValueChange(CurrentNum, UIToolkit.GetFeature<BackgroundFillFeature>(featureToggles), ref previousValue, MaxNum);
+            // UIToolkit.UpdateBackgroundFillAnimation(UIToolkit.GetFeature<BackgroundFillFeature>(featureToggles), MaxNum);
         }
 
     }

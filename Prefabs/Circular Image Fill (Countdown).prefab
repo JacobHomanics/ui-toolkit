@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 483775488287758033}
   - component: {fileID: 3472990644013207974}
   - component: {fileID: 4545777213855320359}
+  - component: {fileID: 6726278279044834586}
+  - component: {fileID: 805875729774926349}
   m_Layer: 5
   m_Name: Background Fill
   m_TagString: Untagged
@@ -75,6 +77,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6726278279044834586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701840690165043853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe93e0e87743d470e9f8b0ae154a7f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: trickedoutui::JacobHomanics.UI.ColorGradientFeatureComponent
+  image: {fileID: 4545777213855320359}
+  colorAtMin: {r: 1, g: 0, b: 0, a: 1}
+  colorAtHalfway: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colorAtMax: {r: 0, g: 1, b: 0, a: 1}
+  reverseFill: 1
+--- !u!114 &805875729774926349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701840690165043853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1216e4a29f27749d1819db3beb8ddc3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: trickedoutui::JacobHomanics.UI.FillImageFeatureComponent
+  image: {fileID: 4545777213855320359}
+  reverseFill: 1
 --- !u!1 &2531374409544189238
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,8 +119,8 @@ GameObject:
   - component: {fileID: 600801375817338425}
   - component: {fileID: 2332729601394157822}
   - component: {fileID: 3099462188781574767}
-  - component: {fileID: 4124969392424578767}
   - component: {fileID: 568712104209698260}
+  - component: {fileID: 550247319040451889}
   m_Layer: 5
   m_Name: Circular Image Fill (Countdown)
   m_TagString: Untagged
@@ -155,89 +188,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4124969392424578767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2531374409544189238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1943bd134676a443b98276cec415f063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: uitoolkit::JacobHomanics.UI.ImageUIToolkit
-  image: {fileID: 4545777213855320359}
-  featureToggles:
-  - rid: 4860107682853421251
-  - rid: 4860107682853421252
-  - rid: 4860107682853421253
-  - rid: 4860107682853421254
-  connector: {fileID: 568712104209698260}
-  reverseFill: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 4860107682853421251
-      type: {class: TextDisplayFeature2, ns: JacobHomanics.UI, asm: uitoolkit}
-      data:
-        text: {fileID: 6599389976425557801}
-        displayType: 2
-        format: '#,##0'
-    - rid: 4860107682853421252
-      type: {class: ColorGradientFeature, ns: JacobHomanics.UI, asm: uitoolkit}
-      data:
-        colorAtMin: {r: 1, g: 0, b: 0, a: 1}
-        colorAtHalfway: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-        colorAtMax: {r: 0, g: 1, b: 0, a: 1}
-        reverseFill: 1
-    - rid: 4860107682853421253
-      type: {class: BackgroundFillFeature, ns: JacobHomanics.UI, asm: uitoolkit}
-      data:
-        backgroundFill: {fileID: 3099462188781574767}
-        keepSizeConsistent: 1
-        animationSpeed: 1000
-        speedCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0.3
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 16
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        delay: 0
-        reverseFill: 1
-        isAnimating: 0
-        animationFromValue: 0
-        animationToValue: 0
-        animationElapsed: 0
-        animationDuration: 0
-        animationDelayRemaining: 0
-    - rid: 4860107682853421254
-      type: {class: FlashingFeature, ns: JacobHomanics.UI, asm: uitoolkit}
-      data:
-        flashImage: {fileID: 8910356476101761100}
-        thresholdPercent: 0.2
-        flashColor1: {r: 1, g: 0, b: 0, a: 1}
-        flashColor2: {r: 1, g: 1, b: 1, a: 1}
-        flashSpeed: 15
-        reverseFill: 1
 --- !u!114 &568712104209698260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +202,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: uitoolkit::JacobHomanics.UI.DefaultConnector
   currentNum: 0
   maxNum: 5
+--- !u!114 &550247319040451889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531374409544189238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883441c47cc914cb58af19b6501aecf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: trickedoutui::JacobHomanics.UI.BackgroundFillFeatureComponent
+  backgroundFillFeature:
+    backgroundFill: {fileID: 3099462188781574767}
+    keepSizeConsistent: 1
+    animationSpeed: 1000
+    speedCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 16
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    delay: 0
+    reverseFill: 1
 --- !u!1 &4551748338903387165
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +255,7 @@ GameObject:
   - component: {fileID: 7965139543688478897}
   - component: {fileID: 6396164012126498086}
   - component: {fileID: 8910356476101761100}
+  - component: {fileID: 5171795454294644999}
   m_Layer: 5
   m_Name: Flash
   m_TagString: Untagged
@@ -327,6 +320,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5171795454294644999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551748338903387165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a8ae2f093604ae3bde93aab4900151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: trickedoutui::JacobHomanics.UI.FlashingFeatureComponent
+  flashImage: {fileID: 8910356476101761100}
+  thresholdPercent: 0.2
+  flashColor1: {r: 1, g: 0, b: 0, a: 1}
+  flashColor2: {r: 1, g: 1, b: 1, a: 1}
+  flashSpeed: 15
+  reverseFill: 1
 --- !u!1 &4740359712009844680
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +349,7 @@ GameObject:
   - component: {fileID: 2384839133812473113}
   - component: {fileID: 123340247644586884}
   - component: {fileID: 6599389976425557801}
+  - component: {fileID: 844300818114980823}
   m_Layer: 5
   m_Name: Count Text
   m_TagString: Untagged
@@ -463,3 +475,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &844300818114980823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740359712009844680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21409c21636d5426c85e134252ffc7f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: trickedoutui::JacobHomanics.UI.TextDisplayFeatureComponent
+  text: {fileID: 6599389976425557801}
+  displayType: 2
+  format: '#,##0'

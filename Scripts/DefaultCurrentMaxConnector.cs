@@ -3,8 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using JacobHomanics.UI;
 
-namespace JacobHomanics.UI {
-    public class DefaultConnector : Connector
+namespace JacobHomanics.UI
+{
+    public class DefaultCurrentMaxConnector : BaseCurrentMaxConnector
     {
         [SerializeField] private float currentNum;
         [SerializeField] private float maxNum;
