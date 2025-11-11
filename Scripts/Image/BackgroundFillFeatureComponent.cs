@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace JacobHomanics.UI
+namespace JacobHomanics.TrickedOutUI
 {
     /// <summary>
     /// MonoBehaviour component that handles animated background fill based on value changes.

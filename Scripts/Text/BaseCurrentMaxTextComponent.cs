@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-namespace JacobHomanics.UI
+namespace JacobHomanics.TrickedOutUI
 {
     [System.Serializable]
     public class TextProperties

@@ -1,8 +1,7 @@
-using JacobHomanics.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace JacobHomanics.UI
+namespace JacobHomanics.TrickedOutUI
 {
     public class FillImageFeatureComponent : BaseCurrentMaxComponent
     {

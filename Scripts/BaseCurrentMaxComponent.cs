@@ -1,7 +1,6 @@
 using UnityEngine;
-using TMPro;
 
-namespace JacobHomanics.UI
+namespace JacobHomanics.TrickedOutUI
 {
     public class BaseCurrentMaxComponent : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace JacobHomanics.UI
+namespace JacobHomanics.TrickedOutUI
 {
     /// <summary>
     /// Serializable class that pairs a color with a threshold value (0.0 to 1.0).

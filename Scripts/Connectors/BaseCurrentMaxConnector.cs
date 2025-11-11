@@ -1,9 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using JacobHomanics.UI;
 
-namespace JacobHomanics.UI
+namespace JacobHomanics.TrickedOutUI
 {
     public abstract class BaseCurrentMaxConnector : MonoBehaviour
     {

@@ -1,7 +1,6 @@
-using UnityEngine;
 using UnityEngine.UI;
 
-namespace JacobHomanics.UI
+namespace JacobHomanics.TrickedOutUI
 {
     public class FillSliderFeatureComponent : BaseCurrentMaxComponent
     {

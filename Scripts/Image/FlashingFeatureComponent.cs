@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace JacobHomanics.UI
+namespace JacobHomanics.TrickedOutUI
 {
     /// <summary>
     /// MonoBehaviour component that creates a flashing effect when a value falls below a threshold.
