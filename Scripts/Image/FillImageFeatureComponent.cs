@@ -12,7 +12,6 @@ namespace JacobHomanics.UI
         {
             get => image;
         }
-        public bool reverseFill;
 
         void Update()
         {
@@ -21,10 +20,7 @@ namespace JacobHomanics.UI
 
         private void UpdateImage(Image image, float current, float max)
         {
-            if (reverseFill)
-                image.fillAmount = (max - current) / max;
-            else
-                image.fillAmount = current / max;
+            image.fillAmount = current / max;
         }
     }
 

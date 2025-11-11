@@ -16,8 +16,6 @@ namespace JacobHomanics.UI
             public float animationSpeed = 10;
             public AnimationCurve speedCurve = AnimationCurve.EaseInOut(0f, 0.3f, 1f, 16f);
             public float delay = 1f;
-
-            public bool reverseFill;
         }
 
         public BackgroundFillFeature backgroundFillFeature;
@@ -48,7 +46,6 @@ namespace JacobHomanics.UI
                 return;
             }
 
-            var reverseFill = bgFeature.reverseFill;
 
             // Get the current background fill value
             float currentFillValue = GetBackgroundFillValue(bgFeature, max);
@@ -58,7 +55,7 @@ namespace JacobHomanics.UI
             if (currentFillValue < 0.01f * max)
             {
                 // Background fill appears uninitialized, initialize it to previousValue
-                SetBackgroundFillAmount(bgFeature, previousValue, max, reverseFill);
+                SetBackgroundFillAmount(bgFeature, previousValue, max);
                 currentFillValue = previousValue;
             }
 
@@ -73,7 +70,7 @@ namespace JacobHomanics.UI
             {
                 // Reset to previous value (starts from previous slider value)
                 startValue = previousValue;
-                SetBackgroundFillAmount(bgFeature, previousValue, max, reverseFill);
+                SetBackgroundFillAmount(bgFeature, previousValue, max);
             }
 
             // If new value is greater than start position, immediately snap to it
@@ -82,24 +79,24 @@ namespace JacobHomanics.UI
                 // Stop any ongoing animation
                 isAnimating = false;
                 // Immediately set to new value
-                SetBackgroundFillAmount(bgFeature, newValue, max, reverseFill);
+                SetBackgroundFillAmount(bgFeature, newValue, max);
             }
             else
             {
                 // HP goes down or stays same - animate from start position
                 // Set up animation state
-                StartBackgroundFillAnimation(startValue, newValue, bgFeature, max, reverseFill);
+                StartBackgroundFillAnimation(startValue, newValue, bgFeature, max);
             }
 
             previousValue = newValue;
         }
 
-        public void StartBackgroundFillAnimation(float fromValue, float toValue, BackgroundFillFeature bgFeature, float max, bool reverseFill)
+        public void StartBackgroundFillAnimation(float fromValue, float toValue, BackgroundFillFeature bgFeature, float max)
         {
             float valueDifference = Mathf.Abs(fromValue - toValue);
             if (valueDifference < 0.001f)
             {
-                SetBackgroundFillAmount(bgFeature, toValue, max, reverseFill);
+                SetBackgroundFillAmount(bgFeature, toValue, max);
                 isAnimating = false;
                 return;
             }
@@ -134,24 +131,22 @@ namespace JacobHomanics.UI
             animationElapsed += Time.deltaTime;
             float t = Mathf.Clamp01(animationElapsed / animationDuration);
             float currentValue = Mathf.Lerp(animationFromValue, animationToValue, t);
-            SetBackgroundFillAmount(bgFeature, currentValue, max, bgFeature.reverseFill);
+            SetBackgroundFillAmount(bgFeature, currentValue, max);
 
             // Check if animation is complete
             if (animationElapsed >= animationDuration)
             {
-                SetBackgroundFillAmount(bgFeature, animationToValue, max, bgFeature.reverseFill);
+                SetBackgroundFillAmount(bgFeature, animationToValue, max);
                 isAnimating = false;
             }
         }
 
-        public static void SetBackgroundFillAmount(BackgroundFillFeature bgFeature, float amount, float max, bool reverseFill)
+        public static void SetBackgroundFillAmount(BackgroundFillFeature bgFeature, float amount, float max)
         {
             if (bgFeature != null && bgFeature.backgroundFill != null)
             {
-                if (reverseFill)
-                    bgFeature.backgroundFill.fillAmount = (max - amount) / max;
-                else
-                    bgFeature.backgroundFill.fillAmount = amount / max;
+
+                bgFeature.backgroundFill.fillAmount = amount / max;
 
                 // bgFeature.backgroundFill.fillAmount = amount / max;
             }

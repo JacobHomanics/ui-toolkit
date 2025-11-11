@@ -14,35 +14,70 @@ namespace JacobHomanics.UI
         public Color flashColor2 = Color.white;
         public float flashSpeed = 15f;
 
-        public bool reverseFill;
+        public enum ThresholdType
+        {
+            below, above
+        }
+
+        public ThresholdType thresholdType;
 
         void Update()
         {
-            FlashingFeatureCommand(flashImage, reverseFill, thresholdPercent, flashColor1, flashColor2, flashSpeed, Current, Max);
+            FlashingFeatureCommand(flashImage, thresholdPercent, flashColor1, flashColor2, flashSpeed, Current, Max, thresholdType);
         }
 
-        public static void FlashingFeatureCommand(Image image, bool reverseFill, float thresholdPercent, Color flashColor1, Color flashColor2, float flashSpeed, float current, float max)
+        public static void FlashingFeatureCommand(Image image, float thresholdPercent, Color flashColor1, Color flashColor2, float flashSpeed, float current, float max, ThresholdType thresholdType)
         {
             float healthPercent;
+            healthPercent = current / max;
 
-            if (reverseFill)
-                healthPercent = (max - current) / max;
-            else
-                healthPercent = current / max;
+            bool condition = false;
+            if (thresholdType == ThresholdType.below)
+                condition = healthPercent <= thresholdPercent;
+            if (thresholdType == ThresholdType.above)
+                condition = healthPercent >= thresholdPercent;
+
+            image.enabled = condition;
+
+            float flashValue = Mathf.Sin(Time.time * flashSpeed) * 0.5f + 0.5f;
+            Color flashColor = Color.Lerp(flashColor1, flashColor2, flashValue);
+            image.color = flashColor;
+            image.fillAmount = current / max;
+
+            // if (reverseFill)
+            //     healthPercent = (max - current) / max;
+            // else
+            //     healthPercent = current / max;
 
 
-            healthPercent = Mathf.Clamp01(healthPercent);
+            // healthPercent = Mathf.Clamp01(healthPercent);
 
-            image.enabled = healthPercent < thresholdPercent;
+            // if (reverseFill)
+            //     image.enabled = healthPercent > thresholdPercent;
+            // else
+            //     image.enabled = healthPercent < thresholdPercent;
 
 
-            if (healthPercent < thresholdPercent)
-            {
-                float flashValue = Mathf.Sin(Time.time * flashSpeed) * 0.5f + 0.5f;
-                Color flashColor = Color.Lerp(flashColor1, flashColor2, flashValue);
-                image.color = flashColor;
-                image.fillAmount = healthPercent;
-            }
+            // if (reverseFill)
+            // {
+            //     if (healthPercent <= thresholdPercent)
+            //     {
+            //         float flashValue = Mathf.Sin(Time.time * flashSpeed) * 0.5f + 0.5f;
+            //         Color flashColor = Color.Lerp(flashColor1, flashColor2, flashValue);
+            //         image.color = flashColor;
+            //         image.fillAmount = (max - current) / max;
+
+            //     }
+            // }
+            // else
+            // if (healthPercent >= thresholdPercent)
+            // {
+            //     float flashValue = Mathf.Sin(Time.time * flashSpeed) * 0.5f + 0.5f;
+            //     Color flashColor = Color.Lerp(flashColor1, flashColor2, flashValue);
+            //     image.color = flashColor;
+            //     image.fillAmount = current / max;
+
+            // }
         }
 
     }

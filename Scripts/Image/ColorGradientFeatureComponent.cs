@@ -38,21 +38,16 @@ namespace JacobHomanics.UI
             new ColorStop(Color.green, 1f)
         };
 
-        public bool reverseFill;
-
         void Update()
         {
-            ColorGradientFeatureCommand(colorStops, reverseFill, image, Current, Max);
+            ColorGradientFeatureCommand(colorStops, image, Current, Max);
         }
 
-        public static void ColorGradientFeatureCommand(List<ColorStop> colorStops, bool reverseFill, Image image, float current, float max)
+        public static void ColorGradientFeatureCommand(List<ColorStop> colorStops, Image image, float current, float max)
         {
             float healthPercent;
 
-            if (reverseFill)
-                healthPercent = (max - current) / max;
-            else
-                healthPercent = current / max;
+            healthPercent = current / max;
 
             healthPercent = Mathf.Clamp01(healthPercent);
 

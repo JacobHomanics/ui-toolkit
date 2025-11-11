@@ -117,7 +117,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     delay: 1
-    reverseFill: 0
 --- !u!1 &1598069856593830627
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +209,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.85
+  m_fontSize: 107.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -343,10 +342,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: trickedoutui::JacobHomanics.UI.ColorGradientFeatureComponent
   image: {fileID: 6041571968118193332}
-  colorAtMin: {r: 1, g: 0, b: 0, a: 1}
-  colorAtHalfway: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  colorAtMax: {r: 0, g: 1, b: 0, a: 1}
-  reverseFill: 0
+  colorStops:
+  - color: {r: 1, g: 0, b: 0, a: 1}
+    threshold: 0
+  - color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    threshold: 0.5
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    threshold: 1
 --- !u!1 &3525788643130489750
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +516,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.2
+  m_fontSize: 109
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -687,7 +689,7 @@ MonoBehaviour:
   flashColor1: {r: 1, g: 0, b: 0, a: 1}
   flashColor2: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 15
-  reverseFill: 0
+  thresholdType: 0
 --- !u!1 &7558892514746803981
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bc8f6233b1544ecb271d2388d9bb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: trickedoutui::JacobHomanics.UI.DefaultCurrentMaxConnector
-  currentNum: 0
+  currentNum: 5
   maxNum: 5
 --- !u!1 &9136881568156448528
 GameObject:
@@ -1016,7 +1018,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.65
+  m_fontSize: 103.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1076,7 +1078,15 @@ MonoBehaviour:
     text: {fileID: 1428707534241963530}
     displayType: 0
     format: '#,##0.##'
+    clampAtMax: 1
+    clampAtZero: 1
+    ceil: 0
+    floor: 0
   rightProperties:
     text: {fileID: 3549978885436732176}
     displayType: 1
     format: '#,##0.##'
+    clampAtMax: 1
+    clampAtZero: 1
+    ceil: 0
+    floor: 0
