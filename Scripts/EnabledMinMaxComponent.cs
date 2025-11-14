@@ -9,7 +9,7 @@ namespace JacobHomanics.TrickedOutUI
     /// </summary>
     public class EnabledMinMaxComponent : BaseCurrentMaxComponent
     {
-        public float thresholdPercent = 0.2f;
+        public float thresholdPercent = 20f;
 
         public enum ThresholdType
         {
@@ -32,9 +32,9 @@ namespace JacobHomanics.TrickedOutUI
 
             bool condition = false;
             if (thresholdType == ThresholdType.below)
-                condition = healthPercent <= thresholdPercent;
+                condition = healthPercent <= (thresholdPercent / 100f);
             if (thresholdType == ThresholdType.above)
-                condition = healthPercent >= thresholdPercent;
+                condition = healthPercent >= (thresholdPercent / 100f);
 
             return condition;
         }
