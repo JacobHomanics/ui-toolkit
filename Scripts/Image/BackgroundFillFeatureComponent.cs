@@ -31,16 +31,14 @@ namespace JacobHomanics.TrickedOutUI
 
         void Update()
         {
-            var fa = backgroundFillFeature.backgroundFill.fillAmount;
-            HandleValueChange(Current, backgroundFillFeature, ref fa, backgroundFillFeature.keepSizeConsistent, ref previousValue, Max);
-            backgroundFillFeature.backgroundFill.fillAmount = UpdateBackgroundFillAnimation(fa, Max);
-            // backgroundFillFeature.backgroundFill.fillAmount = fa;
+            backgroundFillFeature.backgroundFill.fillAmount = HandleValueChange(Current, backgroundFillFeature, backgroundFillFeature.backgroundFill.fillAmount, backgroundFillFeature.keepSizeConsistent, ref previousValue, Max);
+            backgroundFillFeature.backgroundFill.fillAmount = UpdateBackgroundFillAnimation(backgroundFillFeature.backgroundFill.fillAmount, Max);
         }
 
-        public void HandleValueChange(float newValue, BackgroundFillFeature bgFeature, ref float fillAmount, bool keepSizeConsistent, ref float previousValue, float max)
+        public float HandleValueChange(float newValue, BackgroundFillFeature bgFeature, float fillAmount, bool keepSizeConsistent, ref float previousValue, float max)
         {
             if (Mathf.Abs(newValue - previousValue) < 0.001f)
-                return;
+                return fillAmount;
 
             // Get the current background fill value
             float currentFillValue = GetBackgroundFillValue(fillAmount, max);
@@ -86,6 +84,7 @@ namespace JacobHomanics.TrickedOutUI
             }
 
             previousValue = newValue;
+            return fillAmount;
         }
         public void StartBackgroundFillAnimation(float fromValue, float toValue, float max, float delay, AnimationCurve curve, float speed, ref float fillAmount)
         {
