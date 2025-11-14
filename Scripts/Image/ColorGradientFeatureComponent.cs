@@ -43,16 +43,17 @@ namespace JacobHomanics.TrickedOutUI
             ColorGradientFeatureCommand(colorStops, image, Current, Max);
         }
 
-        public static void ColorGradientFeatureCommand(List<ColorStop> colorStops, Image image, float current, float max)
+        public void ColorGradientFeatureCommand(List<ColorStop> colorStops, Image image, float current, float max)
         {
             image.color = CalculateColor(colorStops, current, max);
         }
 
-        public static Color CalculateColor(List<ColorStop> colorStops, float current, float max)
+
+        public Color CalculateColor(List<ColorStop> colorStops, float current, float max)
         {
             float healthPercent;
 
-            healthPercent = current / max;
+            healthPercent = Normalize(current, max);
 
             healthPercent = Mathf.Clamp01(healthPercent);
 
@@ -107,6 +108,11 @@ namespace JacobHomanics.TrickedOutUI
             finalColor = Color.Lerp(lowerStop.color, upperStop.color, t);
 
             return finalColor;
+        }
+
+        public float Normalize(float value1, float value2)
+        {
+            return value1 / value2;
         }
     }
 }
