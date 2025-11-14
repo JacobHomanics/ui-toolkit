@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18db810856384b4abdf73badf782fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thresholdPercent: 0.8
+  thresholdPercent: 80
   thresholdType: 1
   monoBehaviour: {fileID: 5838548588416116233}
 --- !u!114 &742400807634151892
