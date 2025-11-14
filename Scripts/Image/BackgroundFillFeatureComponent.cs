@@ -50,7 +50,7 @@ namespace JacobHomanics.TrickedOutUI
 
 
             // Get the current background fill value
-            float currentFillValue = GetBackgroundFillValue(bgFeature, max);
+            float currentFillValue = GetBackgroundFillValue(bgFeature.backgroundFill.fillAmount, max);
 
             // Check if background fill needs initialization (is at or near 0, indicating uninitialized)
             // Only initialize if it's truly uninitialized, not just different
@@ -161,9 +161,9 @@ namespace JacobHomanics.TrickedOutUI
             return amount / max;
         }
 
-        public static float GetBackgroundFillValue(BackgroundFillFeature bgFeature, float max)
+        public static float GetBackgroundFillValue(float fillAmount, float max)
         {
-            return bgFeature.backgroundFill.fillAmount * max;
+            return fillAmount * max;
         }
     }
 }
