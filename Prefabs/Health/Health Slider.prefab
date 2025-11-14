@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7077148029553041694}
   - component: {fileID: 3041583522251911843}
   - component: {fileID: 7802806129549110227}
-  - component: {fileID: 8553453357985716317}
+  - component: {fileID: 4425935836094398203}
   m_Layer: 5
   m_Name: Background Fill
   m_TagString: Untagged
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8553453357985716317
+--- !u!114 &4425935836094398203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,13 +85,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 484983195663656707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 883441c47cc914cb58af19b6501aecf3, type: 3}
+  m_Script: {fileID: 11500000, guid: e84d72c88b7a3435bae71d1cb80f904f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: trickedoutui::JacobHomanics.UI.BackgroundFillFeatureComponent
+  m_EditorClassIdentifier: 
   backgroundFillFeature:
-    backgroundFill: {fileID: 7802806129549110227}
     keepSizeConsistent: 1
-    animationSpeed: 100
+    animationSpeed: 10
     speedCurve:
       serializedVersion: 2
       m_Curve:
@@ -105,8 +104,8 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.9948932
-        value: 99.976204
+        time: 1
+        value: 16
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -117,6 +116,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     delay: 1
+  image: {fileID: 7802806129549110227}
 --- !u!1 &1598069856593830627
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 278085828884435927}
   - component: {fileID: 2692521968862546590}
   - component: {fileID: 6041571968118193332}
-  - component: {fileID: 2718506530682857217}
+  - component: {fileID: 167228634513482430}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2718506530682857217
+--- !u!114 &167228634513482430
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -338,10 +338,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2172877226195926869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe93e0e87743d470e9f8b0ae154a7f77, type: 3}
+  m_Script: {fileID: 11500000, guid: bd1746e128d0641b0af1373a0ddc178e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: trickedoutui::JacobHomanics.UI.ColorGradientFeatureComponent
-  image: {fileID: 6041571968118193332}
+  m_EditorClassIdentifier: 
   colorStops:
   - color: {r: 1, g: 0, b: 0, a: 1}
     threshold: 0
@@ -349,6 +348,7 @@ MonoBehaviour:
     threshold: 0.5
   - color: {r: 0, g: 1, b: 0, a: 1}
     threshold: 1
+  image: {fileID: 6041571968118193332}
 --- !u!1 &3525788643130489750
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 5338652846209376336}
   - component: {fileID: 2942519561771985071}
   - component: {fileID: 8594109096668083368}
-  - component: {fileID: 2082748070743896246}
+  - component: {fileID: 4750006351330915196}
   m_Layer: 5
   m_Name: Flash
   m_TagString: Untagged
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2082748070743896246
+--- !u!114 &4750006351330915196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -681,15 +681,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5737946761157202813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47a8ae2f093604ae3bde93aab4900151, type: 3}
+  m_Script: {fileID: 11500000, guid: 07aba5db2847f427689ea34c75bbd42e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: trickedoutui::JacobHomanics.UI.FlashingFeatureComponent
-  flashImage: {fileID: 8594109096668083368}
+  m_EditorClassIdentifier: 
   thresholdPercent: 0.2
   flashColor1: {r: 1, g: 0, b: 0, a: 1}
   flashColor2: {r: 1, g: 1, b: 1, a: 1}
   flashSpeed: 15
   thresholdType: 0
+  flashImage: {fileID: 8594109096668083368}
 --- !u!1 &7558892514746803981
 GameObject:
   m_ObjectHideFlags: 0
